@@ -589,15 +589,15 @@ install_x-ui() {
             echo -e "${red}Downloading x-ui failed, please be sure that your server can access GitHub ${plain}"
             exit 1
         fi
-    else
-        tag_version="v2.8.5"
-        tag_version_numeric=${tag_version#v}
-        min_version="2.3.5"
-        
-        if [[ "$(printf '%s\n' "$min_version" "$tag_version_numeric" | sort -V | head -n1)" != "$min_version" ]]; then
-            echo -e "${red}Please use a newer version (at least v2.3.5). Exiting installation.${plain}"
-            exit 1
-        fi
+#    else
+#        tag_version="v2.8.5"
+#        tag_version_numeric=${tag_version#v}
+#        min_version="2.3.5"
+#        
+#        if [[ "$(printf '%s\n' "$min_version" "$tag_version_numeric" | sort -V | head -n1)" != "$min_version" ]]; then
+#            echo -e "${red}Please use a newer version (at least v2.3.5). Exiting installation.${plain}"
+#            exit 1
+#        fi
 
         wget --inet4-only -N -O /usr/local/x-ui-linux-$(arch).tar.gz \
 https://github.com/asd7271/3x-ui/releases/download/${tag_version}/x-ui-linux-$(arch).tar.gz
