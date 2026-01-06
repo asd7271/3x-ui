@@ -574,10 +574,10 @@ install_x-ui() {
     
     # Download resources
     if [ $# == 0 ]; then
-        tag_version="2.8.5"
+        tag_version="v2.8.5"
         if [[ ! -n "$tag_version" ]]; then
             echo -e "${yellow}Trying to fetch version with IPv4...${plain}"
-            tag_version="2.8.5"
+            tag_version="v2.8.5"
             if [[ ! -n "$tag_version" ]]; then
                 echo -e "${red}Failed to fetch x-ui version, it may be due to GitHub API restrictions, please try it later${plain}"
                 exit 1
@@ -590,7 +590,7 @@ install_x-ui() {
             exit 1
         fi
     else
-        tag_version="2.8.5"
+        tag_version="v2.8.5"
         tag_version_numeric=${tag_version#v}
         min_version="2.3.5"
         
